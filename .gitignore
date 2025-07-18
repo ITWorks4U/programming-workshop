@@ -1,0 +1,12 @@
+#ignore files and folders for github repository
+
+#	ignore python cache
+__pycache__/
+
+#	for C programming ignore executables
+*.run
+*.exe
+
+#	ignoring .vscode settings, too
+.vscode/
+*.json
