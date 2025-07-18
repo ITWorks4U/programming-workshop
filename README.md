@@ -11,10 +11,17 @@
 
 ##	build and run
 ######	C programming
--	use the makefile to let build your application
-	-	command: ```make```
+> Linux / macos:
+-	run the makefile by using: ```make```
 -	the executable file ends with *.run
--	only tested for UNIX/Linux
+
+> Windows:
+-	run build.bat or build.ps1 with an argument of "build" or "clean"
+	-	it may happen, that the batch file won't create your compiled application, depending on the Windows security settings itself
+	-	by using the powershell script make sure, that a powershell script can be run on your system
+		-	bypass the restriction with this command, if required, which is active until the windows session ends:
+		-	```Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass```
+-	the executable file ends with *.exe
 
 ######	Python programming
 -	these codes are written with Python 3 (at least with version 3.10)
