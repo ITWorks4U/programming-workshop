@@ -2,6 +2,7 @@
 #
 #	author:		ITWorks4U
 #	created:	July 17th, 2025
+#	updated:	July 22nd, 2025
 #
 
 from time import perf_counter
@@ -28,12 +29,7 @@ def main() -> None:
 	qp: QueenProblem = QueenProblem()
 
 	for nbr_of_queens in range(1, UPPER_BOUNDARY + 1):
-		head = f"""
->>
->> Try to insert {nbr_of_queens} queen(s) into the chess board...
->>
-"""
-		print(head)
+		print(f"\n\n> inserting {nbr_of_queens} to the chess field...")
 
 		start = perf_counter()
 		board = qp.solve_queen_problem(nbr_of_queens)
@@ -44,11 +40,10 @@ def main() -> None:
 
 		if board is not None:
 			qp.print_board(board)
-
-			summaries[f"with {nbr_of_queens:02d} queens"] = f"found solution; duration: {duration:.4f} seconds"
-		else:
-			summaries[f"with {nbr_of_queens:02d} queens"] = f"unable to found a solution; duration: {duration:.4f} seconds"
 		#end if
+
+		summaries[f"with {nbr_of_queens:02d} queens"] = f"solution found: {True if board is not None else False} <=> duration: {duration:.4f} seconds"
+
 	#end for
 
 	print_summary()

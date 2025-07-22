@@ -4,6 +4,7 @@
 *
 * author:		ITWorks4U
 * created:		July 17th, 2025
+* updated:		July 22nd, 2025
 */
 
 #ifndef N_QUEEN_PROBLEM
@@ -12,7 +13,7 @@
 #include <stdbool.h>
 
 /*	definition(s)	*/
-#define UPPER_BOUNDARY	16
+#define UPPER_BOUNDARY	20
 #define QUEEN_FIGURE	'Q'
 #define NO_FIGURE		'-'
 #define START_FIELD		0
@@ -36,7 +37,7 @@ extern int number_of_fields;
 /// false, otherwise
 bool on_safe_field(int row, int column);
 
-/// @brief Try to solve the n queen problem by using a chess board in the range of 1x1 to 16x16.
+/// @brief Try to solve the n queen problem by using a chess board in the range of 1x1 to 20x20.
 /// @param column the column to start
 /// @return true, if the n queen problem was able to solve
 /// false, otherwise

@@ -1,15 +1,16 @@
 /*
 * Solving the n queen problem in C for a dynamically field
-* in the range of 1x1 to 16x16.
+* in the range of 1x1 to 20x20.
 *
 * author:		ITWorks4U
 * created:		July 17th, 2025
+* updated:		July 22nd, 2025
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "..\include\n_queen_problem.h"
+#include "../include/n_queen_problem.h"
 
 char **chess_board = NULL;
 int number_of_fields = 1;

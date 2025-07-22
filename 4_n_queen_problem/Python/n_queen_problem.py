@@ -2,6 +2,7 @@
 #
 #	author:		ITWorks4U
 #	created:	July 17th, 2025
+#	updated:	July 22nd, 2025
 #
 
 from queen_constants import QUEEN, EMPTY
@@ -102,12 +103,11 @@ class QueenProblem:
 		Print the current board to stdout.
 
 		board:
-		-	the n*n dimensional board of 1x1 - 16x16
+		-	the n*n dimensional board of 1x1 - 20x20
 		"""
 		for row in chess_board:
 			everything = f"""
-{" ".join(row)}
-{"-" * (2 * len(chess_board) - 1)}"""
+{" ".join(row)}"""
 			print(everything, end="")
 		#end for
 	#end method
