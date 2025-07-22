@@ -30,11 +30,31 @@ void print_list(void) {
 
 void add_to_list(const char *new_content) {
 	if (root == NULL) {
+		/*
+		* There're multiple ways to request free memory space. Usually,
+		* malloc and calloc are in use, whereas, malloc returns garbage
+		* for your members, so these have to be initialized manually.
+		*
+		* calloc, however, initializes a clean structure, so node_id is
+		* set to 0 by default, content has \0 n times, *next refers to NULL.
+		* In contrast to malloc, calloc takes a bit more time, but this does
+		* not matter at all.
+		*/
+
 		// root = (struct linked_list *) malloc(sizeof(struct linked_list));
 		// root->node_id = 0;
 		// root->next = NULL;
 
 		root = (struct linked_list*) calloc(1, sizeof(struct linked_list));
+
+		/*
+		* Usually, root and also new_node shall be checked against NULL to prevent
+		* undefined behavior during runtime. This has been skipped here.
+		*
+		* new_content may also have a length of BUFFER_LENGTH or it could exceed
+		* the limitation; if true, then this has to be managed, otherwise on runtime
+		* any undefined behavior, typically memory crash, appears here
+		*/
 
 		if (on_valid_content_length(new_content)) {
 			strcpy(root->content, new_content);
