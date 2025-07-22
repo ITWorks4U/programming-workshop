@@ -3,7 +3,7 @@
 *
 * author:	ITWorks4U
 * created:	July 14th, 2025
-* updated:	July 16th, 2025
+* updated:	July 22nd, 2025
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -171,6 +171,10 @@ char *get_content_from_list(int id_to_look_for) {
 }
 
 void reset_input_buffer(char *buffer) {
+	/*	clean the previous input buffer, if needed	*/
+	int c;
+	while((c = getchar()) != '\n' && c != EOF);
+
 	memset(buffer, '\0', BUFFER_LENGTH);
 }
 
